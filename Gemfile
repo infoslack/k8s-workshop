@@ -1,0 +1,10 @@
+source "https://rubygems.org"
+
+gem "rails", "4.2.6"
+gem "pg"
+gem "passenger"
+gem "sass-rails"
+gem "uglifier"
+gem "jbuilder"
+gem "jquery-rails"
+gem "devise"
