@@ -1,9 +1,9 @@
-apiVersion: v1
-kind: ReplicationController
+apiVersion: apps/v1beta1
+kind: Deployment
 metadata:
   name: k8s-rails
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     name: k8s-rails
   template:
@@ -13,7 +13,12 @@ spec:
     spec:
       containers:
         - image: infoslack/k8s-workshop:latest
+          imagePullPolicy: Always
           name: app-rails
+          resources:
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
           ports:
             - containerPort: 4000
               name: passenger
