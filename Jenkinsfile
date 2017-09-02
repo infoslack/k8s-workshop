@@ -1,7 +1,7 @@
 node {
   def project = 'infoslack-1322'
   def appName = 'k8s-workshop'
-  def imageTag = 'gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}'
+  def imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
 
   checkout scm
 
