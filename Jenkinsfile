@@ -15,12 +15,12 @@ node {
   switch (env.BRANCH_NAME) {
 
     case "staging":
-        sh("sed -i.bak 's#CHANGE-HERE#${imageTag}' ./kubernetes/k8s-app.yaml")
+        sh("sed -i.bak 's#CHANGE-HERE#${imageTag}#' ./kubernetes/k8s-app.yaml")
         sh("kubectl --namespace=staging apply -f kubernetes/k8s-app.yaml")
         break
 
     case "master":
-        sh("sed -i.bak 's#CHANGE-HERE#${imageTag}' ./kubernetes/k8s-app.yaml")
+        sh("sed -i.bak 's#CHANGE-HERE#${imageTag}#' ./kubernetes/k8s-app.yaml")
         sh("kubectl --namespace=production apply -f kubernetes/k8s-app.yaml")
         break
   }
