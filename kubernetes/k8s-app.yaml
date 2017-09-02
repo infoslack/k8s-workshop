@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: k8s-rails
 spec:
-  replicas: 4
+  replicas: 3
   template:
     metadata:
       labels:
@@ -16,7 +16,7 @@ spec:
           resources:
             limits:
               memory: "512Mi"
-              cpu: "500m"
+              cpu: "300m"
           ports:
             - containerPort: 4000
               name: passenger
