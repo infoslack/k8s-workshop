@@ -27,7 +27,7 @@ spec:
                   name: rails
                   key: database
             - name: "SECRET_KEY_BASE"
-               valueFrom:
+              valueFrom:
                 secretKeyRef:
                   name: rails
                   key: keybase
