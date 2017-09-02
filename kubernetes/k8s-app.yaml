@@ -20,17 +20,9 @@ spec:
           ports:
             - containerPort: 4000
               name: passenger
-          volumeMounts:
-            - mountPath: /app/public/assets
-              name: assets
           env:
             - name: "DATABASE_URL"
-              value: "postgres://postgres:matrix20@k8s-db.cueava71u30l.us-east-1.rds.amazonaws.com:5432/rails_prod"
+              value: "postgres://postgres:HoyDHwuGIosM4IPP@104.196.54.59:5432/rails_prod"
             - name: "SECRET_KEY_BASE"
               value: "0cfc22f8b904340f5b0d365bcf03e684170739b5f8da4114de3912818f87723b179fc8d4697463e47c19befcd12cf80a792efad42e2114eb031dffd78b3b2806"
           command: ["passenger", "start", "-p", "4000", "-e", "production"]
-      volumes:
-        - name: assets
-          awsElasticBlockStore:
-            volumeID: vol-06be453d354a86876
-            fsType: ext4
