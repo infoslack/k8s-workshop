@@ -10,7 +10,7 @@ spec:
         name: k8s-rails
     spec:
       containers:
-        - image: infoslack/k8s-workshop:latest
+        - image: CHANGE-HERE
           imagePullPolicy: Always
           name: app-rails
           resources:
